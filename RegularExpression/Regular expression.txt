@@ -1,0 +1,84 @@
+			Regular Expression
+
+package = import java.util.regrex.*;
+
+1. Pattern
+2. Matcher
+3.PatternSyntaxexception - unchecked exception
+------------------------------------------------------------
+Syntax
+Pattern p = Pattern.compile(String);
+Matcher m = p.matcher(str);
+-------------------------------------------------------------
+TO LOOP AND CHECK MATCHERS
+
+while(m.find()){
+m.start() ----------> starting point of matched word
+m.end()------------> ending point
+m.group() ------------> output the matched word;
+}
+-----------------------------------------------------------------
+Regular Expression Symbols 
+
+1. ^   - checks whether pattern is first word of sentence.
+2. $ -  checks whether pattern is Last word of sentence
+3. |  - grouping of pattern such as (Pattern.compile("T|A"); ("or")
+-------------------------------------------------------------------
+Character Class - [ ] => Square Bracket
+
+1. [abc ]  - either a | b | c in given sentence
+2. [^abc] - except a|b|c in sentence  
+3. [a-z] - contains alphabet lowercase
+4.[A-Z] - Contains uppercase 
+5.[a-zA-Z] - Both
+6. [0-9] - Numerical in Sentence
+7. [a-zA-Z0-9] - Includes alphaNumericals
+8.  [^a-zA-Z0-9] - prints only special characters
+---------------------------------------------------------
+Predefined Character class
+1. \\s  - Whitespaces in sentences
+2.\\S - except spaces in sentences
+3.\\d - number  in String
+4.\\D - except number in String
+5.\\w - all alphanumberic , except special character.
+6. \\W - only special character.
+7.\\bString - word boundary (word after each whitespaces)
+8. \\bstring\\b - only that complete word.
+9.string\\B - not Boundary starts but should not end with string.
+10.\\GString - continous group of given string without whitespace(previous matching oda ending la regrex string
+11. "." - returns all cahracters including special and space.
+----------------------------------------------------------------
+Quantifiers
+
+check quantity of patterns
+
+symbols used = '+', '*', '?',{}
+
+1. + ---> atleast one match prints only matched charatcer
+2. * ----> any no of matches prints even non matched character as  whitespace.{0,}
+3. ? ---> atmost one match 0 or more
+4. a{2} ---> 2 quantity.
+5. a{1,3} ---> from 1 times to three continously.
+-----------------------------------------------------------------------
+Split 
+1. String class
+2. pattern class
+
+---> Both returns String array
+Syntax 
+Pattern s = Pattern.compile("\\s")
+\\. -----> used to split by dot.
+String as [] = s.spilit("String ");
+for loop to print array;
+-----------------------------------------------------------------------
+This regex will remove all consecutive duplicated words - whether it's 2 duplicated words or 10 duplicated words consecutively:
+ \b(\w+)(?:,\s+\1\b)+
+
+
+
+
+
+
+
+
+
